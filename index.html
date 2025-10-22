@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<div class="main-container" style="display: none;">
+    <div class="sidebar">
+        <div class="search-section">
+            <input type="text" class="search-input" placeholder="Поиск чатов...">
+            <button class="control-btn" id="searchUsers">🔍 Найти пользователей</button>
+        </div>
+        
+        <div class="user-list">
+            <h3>Пользователи</h3>
+            <div id="userList"></div>
+        </div>
+    </div>
+
+    <div class="chat-area">
+        <div class="messages-container" id="messagesContainer">
+            <!-- Сообщения будут здесь -->
+        </div>
+
+        <div class="input-area">
+            <div class="message-input-container">
+                <textarea 
+                    class="message-input" 
+                    id="messageInput" 
+                    placeholder="Введите сообщение..."
+                    rows="1"
+                ></textarea>
+                
+                <div class="controls">
+                    <input type="file" id="fileInput" class="file-upload">
+                    <button class="control-btn" id="fileBtn" title="Отправить файл">📎</button>
+                    
+                    <div class="voice-recorder">
+                        <button class="control-btn record-btn" id="recordBtn" title="Записать голосовое">
+                            🎤
+                        </button>
+                    </div>
+                    
+                    <button class="control-btn" id="sendBtn" title="Отправить">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include edit-panel.html %}
