@@ -1,0 +1,325 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --border-color: #dee2e6;
+    --message-bg: #f8f9fa;
+    --header-bg: #343a40;
+    --input-bg: #ffffff;
+}
+
+.dark-theme {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --primary-color: #0d6efd;
+    --secondary-color: #495057;
+    --border-color: #495057;
+    --message-bg: #2d3748;
+    --header-bg: #2d3748;
+    --input-bg: #374151;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.header {
+    background-color: var(--header-bg);
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.header-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.theme-toggle, .logout-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover, .logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main-container {
+    display: flex;
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: var(--bg-color);
+    border-right: 1px solid var(--border-color);
+    padding: 1rem;
+}
+
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-list {
+    margin-bottom: 1rem;
+}
+
+.user-item {
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.user-item:hover, .user-item.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.search-section {
+    margin-bottom: 1rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+.messages-container {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: var(--bg-color);
+}
+
+.message {
+    max-width: 70%;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 12px;
+    background-color: var(--message-bg);
+    position: relative;
+}
+
+.message.own {
+    margin-left: auto;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.message-info {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-bottom: 0.25rem;
+}
+
+.message-content {
+    word-wrap: break-word;
+}
+
+.input-area {
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+}
+
+.message-input-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-end;
+}
+
+.message-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    resize: none;
+    min-height: 40px;
+    max-height: 120px;
+}
+
+.controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: var(--text-color);
+    transition: background-color 0.3s;
+}
+
+.control-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
+
+.edit-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    z-index: 1500;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.panel-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.panel-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.panel-btn:hover {
+    background-color: #5a6268;
+}
+
+.voice-recorder {
+    position: relative;
+}
+
+.record-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.record-btn.recording {
+    background-color: #28a745;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.file-upload {
+    display: none;
+}
+
+.file-info {
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    opacity: 0.8;
+}
+
+.hidden {
+    display: none;
+}
